@@ -1,0 +1,432 @@
+/*Common style*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Baloo Da 2', cursive;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #17181a;
+}
+
+/*End of Common style*/
+
+/*Navbar*/
+
+.navbar {
+  width: 100%;
+  height: 6rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: -8rem;
+  padding: 3rem;
+  z-index: 500;
+  animation: animateNavbar 1s 0.5s forwards;
+  transition: height 0.5s;
+}
+
+.navbar.change {
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  top: 0rem;
+  left: 3rem;
+  font-size: 4rem;
+  color: white;
+  font-family: inherit;
+  z-index: 500;
+}
+
+.logo span {
+  color: #9e0e09;
+}
+
+@keyframes animateNavbar {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.menu {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  z-index: 500;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #eee;
+  transition: transform 0.3s;
+}
+
+.change .line-2 {
+  transform: translateY(-1rem);
+}
+
+.nav-list {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.7s 0.5s;
+}
+
+.nav-link {
+  font-family: 'MADE Soulmaze', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+.nav-link:hover {
+  color: #9e0e09;
+}
+
+/*End of Navbar*/
+
+.section-1 {
+  width: 100%;
+  height: 100vh;
+}
+
+.image-bakery {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  /*background-size: cover;*/
+}
+
+.image-bakery.change {
+  opacity: 1;
+}
+
+.quote {
+  position: relative;
+  height: 30rem;
+  width: 40rem;
+  top: 15rem;
+  left: 25rem;
+  color: #eee;
+  font-size: 4rem;
+  line-height: 6rem;
+  text-shadow: -0.3rem -0.3rem #000000;
+  z-index: 99;
+}
+
+.quote i {
+  padding-left: 12rem;
+}
+
+.order-now {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Baloo Da 2';
+  font-weight: bold;
+  border-radius: 5rem;
+  width: 25rem;
+  font-size: 4rem;
+  top: 22rem;
+  left: 28rem;
+  background-color: #eee;
+  color: #000000;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.order-now:hover {
+  background-color: #9e0e09;
+}
+
+.order-now::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-30deg);
+  transition: 1s;
+}
+
+.order-now:hover::before {
+  left: 100%;
+}
+
+@keyframes fadeAnimation {
+  0% {
+      opacity: 0;
+      visibility: hidden;
+  }
+  100% {
+      opacity: 1;
+      visibility: visible;
+  }
+}
+
+.order-now a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.section-2, .section-4 {
+  position: relative;
+  width: 120rem;
+  height: 100vh;
+  top: 15rem;
+  left: 15rem;
+  border-radius: 10rem;
+  background-color: #f3f3f3;
+}
+
+.section-2 h1 {
+  position: relative;
+  text-align: center;
+  font-size: 10rem;
+  text-shadow: -0.4rem -0.4rem #9e0e09;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  padding-top: 3rem;
+}
+
+.section-2 ul {
+  justify-content: center;
+  text-align: left;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  font-size: 2rem;
+}
+
+.section-3 {
+  position: relative;
+  top: 15rem;
+}
+
+.section-3 h1 {
+  position: relative;
+  text-align: center;
+  font-size: 10rem;
+  color: #fff;
+  text-shadow: -0.4rem -0.4rem #9e0e09;
+  padding: 3rem;
+  text-transform: uppercase;
+}
+
+.container-prod {
+  position: relative;
+  display: flex;
+  width: 150rem;
+  padding: 0 5rem;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.section-4 {
+  position: relative;
+  top: 25rem;
+  height: 110rem;
+}
+
+.section-4 h1 {
+  position: relative;
+  text-align: center;
+  font-size: 10rem;
+  text-shadow: -0.4rem -0.4rem #9e0e09;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  padding-top: 3rem;
+}
+
+.menu-prod {
+  display: flex;
+  position: relative;
+  padding: 3rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 2.5em;
+}
+
+table tbody {
+  font-size: 1.5em;
+}
+
+.section-5 {
+  position: relative;
+  top: 25rem;
+  justify-content: center;
+  margin-left: 15rem;
+  width: 120rem;
+  height: 100rem;
+}
+
+.section-5 h1 {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  font-size: 10rem;
+  color: #fff;
+  text-shadow: -0.4rem -0.4rem #9e0e09;
+  padding: 3rem;
+  text-transform: uppercase;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+}
+
+.article-body {
+  justify-content: left;
+  text-align: left;
+  margin: 2rem;
+  width: 90rem;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.image-article {
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  max-width: 40rem;
+}
+
+.section-6 {
+  position: relative;
+  top: 25rem;
+  margin-left: 15rem;
+  width: 120rem;
+  height: 50rem;
+  border-radius: 10rem;
+  background-color: #f3f3f3;
+}
+
+.section-6 h1 {
+  position: relative;
+  text-align: center;
+  font-size: 10rem;
+  text-shadow: -0.4rem -0.4rem #9e0e09;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  padding-top: 3rem;
+}
+
+.footer {
+  position: relative;
+  top: 25rem;
+  width: 100%;
+  height: 15rem;
+  background-color: #17181b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-family: "Baloo Da 2", serif;
+  font-size: 1.6rem;
+  color: #a7a7a7;
+}
+
+.social-list a {
+  margin: 0 2rem;
+}
+
+.social-list i {
+  font-size: 2rem;
+  color: #a7a7a7;
+}
+
+.scroll-btn {
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #9e0e09;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+}
